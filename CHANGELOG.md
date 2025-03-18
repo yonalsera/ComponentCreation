@@ -76,3 +76,17 @@ the following form: YYYY.0M.0D.
 [unreleased]: https://github.com/jrg94/portfolio-project/compare/v2024.08.07...HEAD
 [2024.08.07]: https://github.com/jrg94/portfolio-project/compare/v2024.01.07...v2024.08.07
 [2024.01.07]: https://github.com/jrg94/portfolio-project/releases/tag/v2024.01.07
+
+
+## 2025.02.20
+
+### Added
+
+- Designed a proof of concept for MusicPlaylist component
+
+### Updated
+
+- Changed design to include an additional two kernel methods, being clear() and hasSong().
+- Completed an initial implementation for all kernel methods (isEmpty(), add(), remove(), clear(), hasSong()) and two secondary methods (merge() and getArtist()).
+- Changed MusicPlaylist component to be based off a sequence of map pairs rather than a map to allow for greater flexibility and easier access to indivual pairs (otherwise known as the songs).
+- Provided informal testing of methods for proof of their viability.
