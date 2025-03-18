@@ -65,4 +65,5 @@ public interface MusicPlaylistKernel {
      */
     boolean hasSong(Sequence<Map.Pair<String, String>> playlist,
             Map.Pair<String, String> song);
+
 }
