@@ -10,7 +10,7 @@ import components.sequence.Sequence;
  *   this = {}
  * </pre>
  */
-public interface MusicPlaylistKernel {
+public interface MusicPlaylistKernel extends Standard<MusicPlaylist>{
 
     /**
      * Checks whether the playlist is empty and returns the result.
