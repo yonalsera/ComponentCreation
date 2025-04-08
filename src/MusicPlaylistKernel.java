@@ -13,11 +13,12 @@ import components.standard.Standard;
 public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
 
         /**
-         * Checks whether the playlist is empty and returns the result.
+         * Adds a second playlist to the end of the first one.
          *
-         * @return boolean whether playlist is empty or not
+         * @param p2
+         *                playlist to be added to the end of the first playlist
          */
-        boolean isEmpty();
+        void merge(MusicPlaylist p2);
 
         /**
          * Adds a singular song to the playlist, given as a Map.Pair.

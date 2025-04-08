@@ -4,12 +4,11 @@
  */
 public interface MusicPlaylist extends MusicPlaylistKernel {
     /**
-     * Merge two playlists together.
+     * Checks whether the playlist is empty and returns the result.
      *
-     * @param p2
-     *            The second playlist to be merged to the first
+     * @return boolean of whether playlist is empty or not
      */
-    void merge(MusicPlaylist p2);
+    boolean isEmpty();
 
     /**
      * Find and return the artist of the given song.
