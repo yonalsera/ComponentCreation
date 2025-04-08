@@ -1,5 +1,3 @@
-import components.map.Map;
-import components.sequence.Sequence;
 
 /**
  * {@code MusicPlaylistKernel} enhanced with secondary methods.
@@ -11,7 +9,7 @@ public interface MusicPlaylist extends MusicPlaylistKernel {
      * @param p2
      *            The second playlist to be merged to the first
      */
-    void merge(Sequence<Map.Pair<String, String>> p2);
+    void merge(MusicPlaylist p2);
 
     /**
      * Find and return the artist of the given song.

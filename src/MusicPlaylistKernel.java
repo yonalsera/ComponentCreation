@@ -53,4 +53,10 @@ public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
          */
         boolean hasSong(Map.Pair<String, String> song);
 
+        /**
+         *
+         * @return number of songs in playlist
+         */
+        int length();
+
 }
