@@ -20,6 +20,15 @@ public interface MusicPlaylist extends MusicPlaylistKernel {
     String[] getArtist(String title);
 
     /**
+     * Find and return titles of all songs belonging to a given artist.
+     *
+     * @param artist
+     *            Name of artist whose song titles will be returned
+     * @return Array of String with titles of each song
+     */
+    String[] getSongs(String artist);
+
+    /**
      * Randomly shuffle the order of songs in the playlist.
      */
     void shuffle();

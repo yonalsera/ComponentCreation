@@ -61,8 +61,8 @@ public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
         /**
          * @param placement
          *                placement of song within the playlist
-         * @return String of title of the song
+         * @return Map pair of the song including title and artist
          */
-        String getTitle(int placement);
+        Map.Pair<String, String> getSong(int placement);
 
 }
