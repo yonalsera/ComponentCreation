@@ -61,7 +61,7 @@ public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
         int length();
 
         /**
-         * @param placemet
+         * @param placement
          *                placement of song within the playlist
          * @return String of title of the song
          */
