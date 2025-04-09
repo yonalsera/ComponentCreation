@@ -30,16 +30,14 @@ public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
         void add(Map.Pair<String, String> song);
 
         /**
-         * Removes a singular song from the playlist given the song title and
-         * artist, and returns the removed song as a Map.Pair.
+         * Removes a singular song from the playlist given the song title, and
+         * returns the removed song as a Map.Pair.
          *
          * @param title
          *                the name of the song and key of the map pair
-         * @param artist
-         *                the artist of the song and th value of the map pair
          * @return the map pair that was removed from the playlist
          */
-        Map.Pair<String, String> remove(String title, String artist);
+        Map.Pair<String, String> remove(String title);
 
         /**
          * Removes all elements from playlist.

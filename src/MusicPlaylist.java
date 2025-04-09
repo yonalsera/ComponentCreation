@@ -11,13 +11,13 @@ public interface MusicPlaylist extends MusicPlaylistKernel {
     boolean isEmpty();
 
     /**
-     * Find and return the artist of the given song.
+     * Find and return all artists with a song of the given title.
      *
      * @param title
      *            Name of the song to find the corresponding artst
-     * @return String Name of the artist
+     * @return Array of String with names of the artists
      */
-    String getArtist(String title);
+    String[] getArtist(String title);
 
     /**
      * Randomly shuffle the order of songs in the playlist.
