@@ -33,13 +33,4 @@ public interface MusicPlaylist extends MusicPlaylistKernel {
      */
     void shuffle();
 
-    /**
-     * Returns a path to the given song in URL format.
-     *
-     * @param title
-     *            Title of song that will have its path returned
-     * @return String path to song in URL format
-     */
-    String getPath(String title);
-
 }
