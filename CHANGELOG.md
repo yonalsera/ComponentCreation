@@ -99,3 +99,16 @@ the following form: YYYY.0M.0D.
 - Completed an initial implementation for all kernel methods (isEmpty(), add(), remove(), clear(), hasSong()) and two secondary methods (merge() and getArtist()).
 - Changed MusicPlaylist component to be based off a sequence of map pairs rather than a map to allow for greater flexibility and easier access to indivual pairs (otherwise known as the songs).
 - Provided informal testing of methods for proof of their viability.
+
+## 2025.04.13
+
+### Added
+
+- Designed abstract class for MusicPlaylit component
+
+### Updated
+
+- Changed design to include a different variation of kernel methods and secondary methods
+- Deletion of the getPath() method.
+
+
