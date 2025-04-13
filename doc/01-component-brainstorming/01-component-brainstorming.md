@@ -2,7 +2,7 @@
 
 - **Name**: Yonal Serasinghe
 - **Dot Number**: serasinghe.2
-- **Due Date**: 2/5/2025 @1:50
+- **Due Date**: 2/4/2025 @ 1:50 PM
 
 ## Assignment Overview
 
@@ -103,6 +103,7 @@ Below is further rationale/explanation for the rubric items above:
 > images in this section.
 
 
+To be completely honest, I'm not entirely sure where I want to go within the world of computer science. While I don't have a clear vision for my future in this field, I do have some hobbies I really enjoy like sketching and listening to music, especially doing both at together.
 
 ## Assignment
 
@@ -189,68 +190,81 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: MusicPlaylist
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This component allows for adding, removing, and various sorting options within a playlist of songs.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - boolean isEmpty(): returns whether playlist is empty
+    - void add(): adds a song to the bottom of playlist
+    - T remove(String s): removes a given song from playlist and returns it
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - void clear(): removes all songs from the playlist
+    - void merge(MusicPlaylist p): merge two different playlists together
+    - void shuffle(): shuffles the order of the songs in the playlist
+    - T getArtist(String s): take song name and return artist of a given song
+    - String getPath(String s): gives path to song link given name of song
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I think this would be immutable as playlist functions are relatively standard.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - If I wanted this component to store both the song name as well as the artist, utilizing Map.Pair would be useful, as I could keep track of both together.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't think it would need any.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I think all except for getArtist(String s) could be implemented using the kernel methods.
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: ArtPorfo
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - Store attributes of various art pieces made to make them easier to track and more personal.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void add(String s, T x): add an attribute and corresponding information
+    - void clear(String s): clear information of given attribute
+    - int size(): returns the size of the list of attributes
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - void addDescription(String s): add a more general description for the piece
+    - void format(): Changes the order of the attributes to follow a standard order of name, date, description, mode, etc.
+    - String missingAtt(): Returns any missing recommended attributes that the user hasn't added, such as the name, date, description, mode, etc.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I'm not sure
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I think one way to design this would be to have the name of the attribute such as the name of the piece, or the date it was made be the key and then value of those attributes as the value.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - It may require some constant values or information from some library to compare the ArtPorfo to see if any attributes are missing, which is done in the missingAtt() method.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I think the addDescription could be implemented by the add method. Also checking for missing attributes in the missingAtt method can use the size() method to traverse through the data.
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: StudentID
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - Find a brief description of students a long with other data based on the given ID.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - int getID(): gets ID of students
+    - void add(T x): adds attribute of students
+    - T remove(T x): removes attrbute of students
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - String getName(): gets full name of students
+    - String getDescription(): gets brief description of student
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - This component could have a lot of adaptability as various attributes of students could be added, and the software could get as specific as wanted.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - This could potentially use a tree, having the root be the ID number of the student and then the attributes be different nodes.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't think so.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, the getName() and getDescription() method could be added by simply removing the attribute, returning the value and then adding it back in to restore the original data.
 
 ## Post-Assignment
 
@@ -259,7 +273,6 @@ completed the assignment.
 
 ### Changelog
 
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -277,13 +290,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## YYYY.MM.DD
+## 2025.02/04
 
 ### Added
 
-- Designed a <!-- insert name of component 1 here --> component
-- Designed a <!-- insert name of component 2 here --> component
-- Designed a <!-- insert name of component 3 here --> component
+- Designed a MusicPlaylist component
+- Designed a ArtPorfo component
+- Designed a StudentID component
 ```
 
 Here `YYYY.MM.DD` would be the date of your submission, such as 2024.04.21.
@@ -298,7 +311,6 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
 
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
@@ -308,11 +320,9 @@ all your work is there before submitting. For future assignments, you will
 just be submitting a link to a pull request. This will be the only time
 you have to submit any PDFs.
 
-<!-- TODO: upload a PDF of this document and the CHANGELOG to Carmen then delete this comment -->
 
 ### Peer Review
 
-<!-- TODO: review the peer review guidelines then delete this comment -->
 
 Following the completion of this assignment, you will be assigned three
 students' component brainstorming assignments for review. Your job during the
