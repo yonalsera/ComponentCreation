@@ -1,3 +1,3 @@
-public class MusicPlaylistOnSequence extends MusicPlaylistSecondary {
+public class MusicPlaylistOnSequence {
 
 }
