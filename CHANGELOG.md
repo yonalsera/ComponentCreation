@@ -104,3 +104,14 @@ the following form: YYYY.0M.0D.
 - Deletion of the getPath() method.
 
 
+## [2025.04.15]
+
+### Added
+
+- Designed kernel implementation for MusicPlaylist component
+
+### Updated
+
+- Changed design so merge method is now a secondary method.
+
+
