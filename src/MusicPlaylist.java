@@ -3,6 +3,15 @@
  * {@code MusicPlaylistKernel} enhanced with secondary methods.
  */
 public interface MusicPlaylist extends MusicPlaylistKernel {
+
+    /**
+     * Adds a second playlist to the end of the first one.
+     *
+     * @param p2
+     *            playlist to be added to the end of the first playlist
+     */
+    void merge(MusicPlaylist p2);
+
     /**
      * Checks whether the playlist is empty and returns the result.
      *

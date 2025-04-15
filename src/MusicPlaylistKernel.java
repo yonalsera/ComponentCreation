@@ -13,14 +13,6 @@ import components.standard.Standard;
 public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
 
         /**
-         * Adds a second playlist to the end of the first one.
-         *
-         * @param p2
-         *                playlist to be added to the end of the first playlist
-         */
-        void merge(MusicPlaylist p2);
-
-        /**
          * Adds a singular song to the playlist, given as a Map.Pair.
          *
          * @param song
