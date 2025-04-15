@@ -11,10 +11,55 @@ public abstract class MusicPlaylistSecondary implements MusicPlaylist {
     /*
      * Common methods (from Object) -------------------------------------------
      */
+    /**
+     * Turn contents of MusicPlaylist object into a string.
+     *
+     * @return String of contents
+     */
+    @Override
+    public String toString() {
+        String str = "";
+        int length = this.playlist.length();
+        for (int i = 0; i < length; i++) {
+            str += this.playlist.getSong(i);
+        }
+        return str;
+    }
+
+    /**
+     * Checks if contents of two MusicPlaylist objects are the same.
+     *
+     * @param obj
+     *            Object with contents that will be compared to this
+     * @return True if contents are the same and false otherwise
+     */
+    @Override
+    public boolean equals(Object obj) {
+        boolean check = true;
+        if (this != obj || obj == null || this.getClass() != obj.getClass()) {
+            check = false;
+        }
+        return check;
+    }
 
     /*
      * Other non-kernel methods -----------------------------------------------
      */
+
+    /**
+     * Adds a second playlist to the end of the first one.
+     *
+     * @param p2
+     *            playlist to be added to the end of the first playlist
+     */
+    @Override
+    public void merge(MusicPlaylist p2) {
+        String title = "";
+        for (int i = 0; i < p2.length(); i++) {
+            title = p2.getSong(i).key();
+            this.playlist.add(p2.remove(title));
+        }
+    }
 
     /**
      * Checks whether the playlist is empty and returns the result.
@@ -83,36 +128,4 @@ public abstract class MusicPlaylistSecondary implements MusicPlaylist {
             this.playlist.add(temp.remove(temp.getSong(i).key()));
         }
     }
-
-    /**
-     * Turn contents of MusicPlaylist object into a string.
-     *
-     * @return String of contents
-     */
-    @Override
-    public String toString() {
-        String str = "";
-        int length = this.playlist.length();
-        for (int i = 0; i < length; i++) {
-            str += this.playlist.getSong(i);
-        }
-        return str;
-    }
-
-    /**
-     * Checks if contents of two MusicPlaylist objects are the same.
-     *
-     * @param obj
-     *            Object with contents that will be compared to this
-     * @return True if contents are the same and false otherwise
-     */
-    @Override
-    public boolean equals(Object obj) {
-        boolean check = true;
-        if (this != obj || obj == null || this.getClass() != obj.getClass()) {
-            check = false;
-        }
-        return check;
-    }
-
 }
