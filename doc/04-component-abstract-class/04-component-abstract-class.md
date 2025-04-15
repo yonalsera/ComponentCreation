@@ -2,7 +2,7 @@
 
 - **Name**: Yonal Serasinghe
 - **Dot Number**: serasinghe.2
-- **Due Date**: 4/1/2025 @ 1:50 PM
+- **Due Date**: 4/8/2025
 
 ## Assignment Overview
 
@@ -46,8 +46,6 @@ access to the representation, so you must also implement them using the kernel
 methods only.
 
 ## Assignment Checklist
-
-<!-- TODO: browse the checklist then delete this comment -->
 
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
@@ -136,8 +134,6 @@ Below is further rationale/explanation for the rubric items above:
 > rebase strategies described [here](https://stackoverflow.com/questions/35790561/working-while-waiting-for-pending-pr)
 > and [here](https://stackoverflow.com/questions/18021888/continue-working-on-a-git-branch-after-making-a-pull-request).
 
-
-
 ## Assignment Tasks
 
 Your primary task for this assignment is to create an abstract class that falls
@@ -192,7 +188,6 @@ request merge (or at least tag your commits). This is not required.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
 
 Assuming that your project is in a GitHub repo somewhere and your changes are on
 a proof-of-concept branch, then what we'll want you to do is create a pull
