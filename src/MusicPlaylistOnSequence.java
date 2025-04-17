@@ -1,11 +1,9 @@
-import components.map.Map;
-import components.map.Map1L;
 import components.sequence.Sequence;
 import components.sequence.Sequence1L;
 
 /**
- * {@code MusicPlaylist} represented as a Sequence of Map.Pair with
- * implementations of primary methods.
+ * {@code MusicPlaylist} represented as a Sequence of Song with implementations
+ * of primary methods.
  *
  * @convention |this.rep| >= 0 & !this.contains(null)
  * @correspondence this = $this.rep
@@ -19,7 +17,7 @@ public class MusicPlaylistOnSequence extends MusicPlaylistSecondary {
     /**
      * Representation of {@code this}.
      */
-    private Sequence<Map.Pair<String, String>> rep;
+    private Sequence<Song> rep;
 
     /**
      * Creator of initial representation.
@@ -49,9 +47,8 @@ public class MusicPlaylistOnSequence extends MusicPlaylistSecondary {
      */
     public MusicPlaylistOnSequence(String title, String artist) {
         this.createNewRep();
-        Map<String, String> map = new Map1L<>();
-        map.add(title, artist);
-        this.rep.add(0, map.remove(title));
+        Song s = new Song(title, artist);
+        this.rep.add(0, s);
     }
 
     /*
@@ -88,24 +85,20 @@ public class MusicPlaylistOnSequence extends MusicPlaylistSecondary {
      */
 
     @Override
-    public final void add(Map.Pair<String, String> song) {
-        this.rep.add(this.rep.length(), song);
+    public final void add(Song song) {
+        this.rep.add(0, song);
     }
 
     @Override
-    public final Map.Pair<String, String> remove(String title) {
-        boolean check = true;
-        int i = 0;
-        Map<String, String> songs = new Map1L<>();
-        while (i < this.rep.length() && check) {
-            if (this.rep.entry(i).key().equals(title)) {
-                songs.add(this.rep.entry(i).key(), this.rep.entry(i).value());
-                this.rep.remove(i);
-                check = false;
+    public final Song remove(String title, String artist) {
+        Song removeS = new Song("", "");
+        for (int i = 0; i < this.rep.length(); i++) {
+            Song s = this.rep.entry(i);
+            if (s.title().equals(title) && s.artist().equals(artist)) {
+                s = this.rep.remove(i);
             }
-            i++;
         }
-        return songs.removeAny();
+        return removeS;
     }
 
     @Override
@@ -114,10 +107,11 @@ public class MusicPlaylistOnSequence extends MusicPlaylistSecondary {
     }
 
     @Override
-    public final boolean hasSong(Map.Pair<String, String> song) {
+    public final boolean hasSong(Song song) {
         boolean present = false;
-        for (Map.Pair<String, String> s : this.rep) {
-            if (s.key().equals(song.key()) && s.value().equals(song.value())) {
+        for (Song s : this.rep) {
+            if (s.artist().equals(song.artist())
+                    && s.title().equals(song.title())) {
                 present = true;
             }
         }
@@ -130,7 +124,7 @@ public class MusicPlaylistOnSequence extends MusicPlaylistSecondary {
     }
 
     @Override
-    public final Map.Pair<String, String> getSong(int placement) {
+    public final Song getSong(int placement) {
         return this.rep.entry(placement);
     }
 
