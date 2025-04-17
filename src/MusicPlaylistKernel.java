@@ -22,11 +22,13 @@ public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
         void add(Song song);
 
         /**
-         * Removes a singular song from the playlist given the song title, and
-         * returns the removed song as a Song object.
+         * Removes a singular song from the playlist given the song title and
+         * artist, and returns the removed song as a Song object.
          *
          * @param title
-         *                the name of the song, key value of object
+         *                the name of the song, key of object
+         * @param artist
+         *                the name of the artist, value of object
          * @return the Song object that was removed from the playlist
          * @updates this
          * @requires title is in DOMAIN(this)
@@ -36,7 +38,7 @@ public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
          * this = #this \ {remove}
          * </pre>
          */
-        Song remove(String title);
+        Song remove(String title, String artist);
 
         /**
          * @param song
