@@ -195,7 +195,7 @@ will likely refine your design to make your implementation easier to use.
     - This component allows for adding, removing, and various sorting options within a playlist of songs.
   - **Kernel Methods**:
     - boolean isEmpty(): returns whether playlist is empty
-    - void add(): adds a song to the bottom of playlist
+    - void add(String title, String artist): adds a song to the bottom of playlist
     - T remove(String s): removes a given song from playlist and returns it
   - **Secondary Methods**:
     - void clear(): removes all songs from the playlist
@@ -222,8 +222,9 @@ will likely refine your design to make your implementation easier to use.
     - Store attributes of various art pieces made to make them easier to track and more personal.
   - **Kernel Methods**:
     - void add(String s, T x): add an attribute and corresponding information
-    - void clear(String s): clear information of given attribute
+    - void clearAttribute(String s): clear information of given attribute
     - int size(): returns the size of the list of attributes
+    - addText(String): specifically add text to the be able to label certain elements of the object
   - **Secondary Methods**:
     - void addDescription(String s): add a more general description for the piece
     - void format(): Changes the order of the attributes to follow a standard order of name, date, description, mode, etc.
