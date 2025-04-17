@@ -1,4 +1,3 @@
-import components.map.Map;
 import components.standard.Standard;
 
 /**
@@ -13,23 +12,22 @@ import components.standard.Standard;
 public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
 
         /**
-         * Adds a singular song to the playlist, given as a Map.Pair.
+         * Adds a singular song to the playlist, given as a song object.
          *
          * @param song
-         *                Map.Pair<String, String> that will be added to
-         *                playlist
+         *                song that will be added to playlist
          * @updates this
          * @ensures this = #this union song
          */
-        void add(Map.Pair<String, String> song);
+        void add(Song song);
 
         /**
          * Removes a singular song from the playlist given the song title, and
-         * returns the removed song as a Map.Pair.
+         * returns the removed song as a Song object.
          *
          * @param title
-         *                the name of the song and key of the map pair
-         * @return the map pair that was removed from the playlist
+         *                the name of the song, key value of object
+         * @return the Song object that was removed from the playlist
          * @updates this
          * @requires title is in DOMAIN(this)
          * @ensures <pre>
@@ -38,7 +36,7 @@ public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
          * this = #this \ {remove}
          * </pre>
          */
-        Map.Pair<String, String> remove(String title);
+        Song remove(String title);
 
         /**
          * @param song
@@ -46,7 +44,7 @@ public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
          * @return boolean true if song is present or false otherwise
          * @ensures hasSong = (song is in this)
          */
-        boolean hasSong(Map.Pair<String, String> song);
+        boolean hasSong(Song song);
 
         /**
          *
@@ -58,10 +56,10 @@ public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
         /**
          * @param placement
          *                placement of song within the playlist
-         * @return Map pair of the song including title and artist
+         * @return Song song including title and artist
          * @requires placement < this.length
          * @ensures (key, value) is in this
          */
-        Map.Pair<String, String> getSong(int placement);
+        Song getSong(int placement);
 
 }
