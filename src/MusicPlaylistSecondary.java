@@ -39,9 +39,11 @@ public abstract class MusicPlaylistSecondary implements MusicPlaylist {
     @Override
     public void merge(MusicPlaylist p2) {
         String title = "";
+        String artist = "";
         for (int i = 0; i < p2.length(); i++) {
-            title = p2.getSong(i).key();
-            this.add(p2.remove(title));
+            title = p2.getSong(i).title();
+            artist = p2.getSong(i).artist();
+            this.add(p2.remove(title, artist));
         }
     }
 
@@ -68,8 +70,8 @@ public abstract class MusicPlaylistSecondary implements MusicPlaylist {
         String[] artists = new String[this.length()];
         int j = 0;
         for (int i = 0; i < length; i++) {
-            if (this.getSong(i).key().equals(title)) {
-                artists[j] = this.getSong(i).value();
+            if (this.getSong(i).title().equals(title)) {
+                artists[j] = this.getSong(i).artist();
                 j++;
             }
         }
@@ -89,8 +91,8 @@ public abstract class MusicPlaylistSecondary implements MusicPlaylist {
         String[] titles = new String[this.length()];
         int j = 0;
         for (int i = 0; i < length; i++) {
-            if (this.getSong(i).value().equals(artist)) {
-                titles[j] = this.getSong(i).key();
+            if (this.getSong(i).artist().equals(artist)) {
+                titles[j] = this.getSong(i).title();
                 j++;
             }
         }
@@ -105,11 +107,13 @@ public abstract class MusicPlaylistSecondary implements MusicPlaylist {
         MusicPlaylist temp = this.newInstance();
         while (this.length() != 0) {
             int i = (int) (Math.random() * this.length());
-            temp.add(this.remove(this.getSong(i).key()));
+            temp.add(this.remove(this.getSong(i).title(),
+                    this.getSong(i).artist()));
         }
         int length = temp.length();
         for (int i = 0; i < length; i++) {
-            this.add(temp.remove(temp.getSong(i).key()));
+            this.add(temp.remove(temp.getSong(i).title(),
+                    temp.getSong(i).artist()));
         }
     }
 }
