@@ -18,6 +18,8 @@ public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
          * @param song
          *                Map.Pair<String, String> that will be added to
          *                playlist
+         * @updates this
+         * @ensures this = #this union {(key, value)}
          */
         void add(Map.Pair<String, String> song);
 
@@ -28,25 +30,29 @@ public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
          * @param title
          *                the name of the song and key of the map pair
          * @return the map pair that was removed from the playlist
+         * @updates this
+         * @requires title is in DOMAIN(this)
+         * @ensures <pre>
+         * remove.title = title  and
+         * remove is in #this  and
+         * this = #this \ {remove}
+         * </pre>
          */
         Map.Pair<String, String> remove(String title);
 
         /**
-         * Removes all elements from playlist.
-         */
-        @Override
-        void clear();
-
-        /**
          * @param song
          *                song that is being searched for
-         * @return boolean whether song is present or not
+         * @return boolean true if song is present or false otherwise
+         * @ensures hasSong = (song.key is in DOMAIN(this)) && song.value ==
+         *          this.song.value
          */
         boolean hasSong(Map.Pair<String, String> song);
 
         /**
          *
          * @return number of songs in playlist
+         * @ensures length = |this|
          */
         int length();
 
@@ -54,6 +60,8 @@ public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
          * @param placement
          *                placement of song within the playlist
          * @return Map pair of the song including title and artist
+         * @requires placement < this.length
+         * @ensures (key, value) is in this
          */
         Map.Pair<String, String> getSong(int placement);
 
