@@ -51,6 +51,17 @@ public class MusicPlaylistOnSequence extends MusicPlaylistSecondary {
         this.rep.add(0, s);
     }
 
+    /**
+     * Constructor from two {@code String}.
+     *
+     * @param s
+     *            {@code Song} to initialize pair with Song object
+     */
+    public MusicPlaylistOnSequence(Song s) {
+        this.createNewRep();
+        this.rep.add(0, s);
+    }
+
     /*
      * Standard methods -------------------------------------------------------
      */

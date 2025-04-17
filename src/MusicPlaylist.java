@@ -48,7 +48,7 @@ public interface MusicPlaylist extends MusicPlaylistKernel {
      * Randomly shuffle the order of songs in the playlist.
      *
      * @requres this.length > 0
-     * @ensures this = #this
+     * @ensures order of this != order of #this
      */
     void shuffle();
 

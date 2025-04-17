@@ -105,15 +105,22 @@ public abstract class MusicPlaylistSecondary implements MusicPlaylist {
     @Override
     public void shuffle() {
         MusicPlaylist temp = this.newInstance();
-        while (this.length() != 0) {
-            int i = (int) (Math.random() * this.length());
-            temp.add(this.remove(this.getSong(i).title(),
-                    this.getSong(i).artist()));
+        MusicPlaylist origPlaylist = this.newInstance();
+
+        for (int i = 0; i < this.length(); i++) {
+            origPlaylist.add(this.getSong(i));
         }
-        int length = temp.length();
-        for (int i = 0; i < length; i++) {
-            this.add(temp.remove(temp.getSong(i).title(),
-                    temp.getSong(i).artist()));
+        while (this.equals(origPlaylist)) {
+            int length = this.length();
+            while (length != 0) {
+                int i = (int) (Math.random() * this.length());
+                temp.add(this.remove(this.getSong(i).title(),
+                        this.getSong(i).artist()));
+            }
+            for (int i = 0; i < length; i++) {
+                this.add(temp.remove(temp.getSong(i).title(),
+                        temp.getSong(i).artist()));
+            }
         }
     }
 }
