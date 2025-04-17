@@ -19,7 +19,7 @@ public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
          *                Map.Pair<String, String> that will be added to
          *                playlist
          * @updates this
-         * @ensures this = #this union {(key, value)}
+         * @ensures this = #this union song
          */
         void add(Map.Pair<String, String> song);
 
@@ -44,8 +44,7 @@ public interface MusicPlaylistKernel extends Standard<MusicPlaylist> {
          * @param song
          *                song that is being searched for
          * @return boolean true if song is present or false otherwise
-         * @ensures hasSong = (song.key is in DOMAIN(this)) && song.value ==
-         *          this.song.value
+         * @ensures hasSong = (song is in this)
          */
         boolean hasSong(Map.Pair<String, String> song);
 
