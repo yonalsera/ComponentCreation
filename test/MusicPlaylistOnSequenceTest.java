@@ -6,6 +6,97 @@ import org.junit.Test;
  * Test MusicPlaylistOnSequence class.
  */
 public abstract class MusicPlaylistOnSequenceTest {
+    /**
+     * Test newInstance method.
+     */
+    @Test
+    public void testNewInstanceOnEmpty() {
+        MusicPlaylist p1 = new MusicPlaylistOnSequence();
+        MusicPlaylist p2 = p1.newInstance();
+
+        assertEquals(p1, p2);
+    }
+
+    /**
+     * Test newInstance on MusicPlaylist with elements.
+     */
+    @Test
+    public void testNewInstanceWithElements() {
+        MusicPlaylist p1 = new MusicPlaylistOnSequence("Tomorrow Never Came",
+                "Lana Del Rey");
+        MusicPlaylist p2 = new MusicPlaylistOnSequence();
+        MusicPlaylist p3 = p1.newInstance();
+
+        assertEquals(p2, p3);
+    }
+
+    /**
+     * Test transferFrom method.
+     */
+    @Test
+    public void testTransferFromOneElement() {
+        MusicPlaylist p1 = new MusicPlaylistOnSequence();
+        MusicPlaylist p2 = new MusicPlaylistOnSequence("Tomorrow Never Came",
+                "Lana Del Rey");
+        MusicPlaylist p3 = new MusicPlaylistOnSequence();
+        MusicPlaylist p4 = new MusicPlaylistOnSequence("Tomorrow Never Came",
+                "Lana Del Rey");
+
+        p1.transferFrom(p2);
+
+        assertEquals(p4, p1);
+        assertEquals(p3, p2);
+    }
+
+    /**
+     * Test transferFrom method.
+     */
+    @Test
+    public void testTransferFromMultiElement() {
+        MusicPlaylist p1 = new MusicPlaylistOnSequence();
+        MusicPlaylist p2 = new MusicPlaylistOnSequence("Tomorrow Never Came",
+                "Lana Del Rey");
+        MusicPlaylist p3 = new MusicPlaylistOnSequence();
+        MusicPlaylist p4 = new MusicPlaylistOnSequence("Tomorrow Never Came",
+                "Lana Del Rey");
+        Song s = new Song("20cm", "TXT");
+
+        p2.add(s);
+        p4.add(s);
+        p1.transferFrom(p2);
+
+        assertEquals(p4, p1);
+        assertEquals(p3, p2);
+    }
+
+    /**
+     * Test for clear method with one element.
+     */
+    public void testClearOneElement() {
+        MusicPlaylist p1 = new MusicPlaylistOnSequence("Tomorrow Never Came",
+                "Lana Del Rey");
+        MusicPlaylist p2 = new MusicPlaylistOnSequence();
+
+        p1.clear();
+
+        assertEquals(p2, p1);
+    }
+
+    /**
+     * Test for clear method with one element.
+     */
+    public void testClearMultiElement() {
+        MusicPlaylist p1 = new MusicPlaylistOnSequence("Tomorrow Never Came",
+                "Lana Del Rey");
+        MusicPlaylist p2 = new MusicPlaylistOnSequence();
+
+        Song s = new Song("20cm", "TXT");
+        p1.add(s);
+
+        p1.clear();
+
+        assertEquals(p2, p1);
+    }
 
     /**
      * Test add method when MusicPlaylist is empty.

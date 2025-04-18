@@ -91,6 +91,11 @@ public class MusicPlaylistOnSequence extends MusicPlaylistSecondary {
         localSource.createNewRep();
     }
 
+    @Override
+    public final void clear() {
+        this.rep.clear();
+    }
+
     /*
      * Kernel methods ---------------------------------------------------------
      */
@@ -110,11 +115,6 @@ public class MusicPlaylistOnSequence extends MusicPlaylistSecondary {
             }
         }
         return removeS;
-    }
-
-    @Override
-    public final void clear() {
-        this.rep.clear();
     }
 
     @Override
