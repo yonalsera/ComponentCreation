@@ -114,4 +114,16 @@ the following form: YYYY.0M.0D.
 
 - Changed design so merge method is now a secondary method.
 
+# [2025.04.18]
+
+### Added
+
+- Designed test suite for MusicPlaylist component
+- Designed two different use cases for MusicPlaylist component
+
+### Updated
+
+- Changed design to include Song class instead of taking in two strings, allowing for greater flexibility for the implementor and user. Object is now a Sequence of Song objects
+- Made multiple changes to the interface and layering of MusicPlaylist, and swtiched various methods like merge
+- Updated method contracts to include more information and changed all used of Map.Pair to be Song objects
 
