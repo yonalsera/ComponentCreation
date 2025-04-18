@@ -69,6 +69,15 @@ the following form: YYYY.0M.0D.
 [2024.08.07]: https://github.com/jrg94/portfolio-project/compare/v2024.01.07...v2024.08.07
 [2024.01.07]: https://github.com/jrg94/portfolio-project/releases/tag/v2024.01.07
 
+## [2025.03.03]
+
+### Added
+
+- Designed kernel and enhanced interfaces for MusicPlaylist component
+
+### Updated
+
+- Changed design to include thorougly established interfaces for the kernel and secondary methods within MusicPlaylist, more specifically the return type and parameters.
 
 ## 2025.02.20
 
@@ -83,16 +92,38 @@ the following form: YYYY.0M.0D.
 - Changed MusicPlaylist component to be based off a sequence of map pairs rather than a map to allow for greater flexibility and easier access to indivual pairs (otherwise known as the songs).
 - Provided informal testing of methods for proof of their viability.
 
-## 2025.03.04
+## 2025.04.13
 
 ### Added
 
-- Designed kernel and enhanced interfaces for MusicPlaylist and MusicPlaylistKernel component
+- Designed abstract class for MusicPlaylit component
 
 ### Updated
 
-- Changed design to include better and more logical layering between the kernel and secondary methods
+- Changed design to include a different variation of kernel methods and secondary methods
+- Deletion of the getPath() method.
 
-- Designed a MusicPlaylist component
-- Designed a ArtPorfo component
-- Designed a StudentID component
+
+## [2025.04.15]
+
+### Added
+
+- Designed kernel implementation for MusicPlaylist component
+
+### Updated
+
+- Changed design so merge method is now a secondary method.
+
+# [2025.04.18]
+
+### Added
+
+- Designed test suite for MusicPlaylist component
+- Designed two different use cases for MusicPlaylist component
+
+### Updated
+
+- Changed design to include Song class instead of taking in two strings, allowing for greater flexibility for the implementor and user. Object is now a Sequence of Song objects
+- Made multiple changes to the interface and layering of MusicPlaylist, and swtiched various methods like merge
+- Updated method contracts to include more information and changed all used of Map.Pair to be Song objects
+
