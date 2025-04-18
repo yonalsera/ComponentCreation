@@ -14,7 +14,7 @@ public abstract class MusicPlaylistSecondaryTest {
         @Test
         public void testToStringEmpty() {
                 MusicPlaylist p1 = new MusicPlaylistOnSequence();
-                MusicPlaylist p2 = new MusicPlaylistOnSequence()
+                MusicPlaylist p2 = new MusicPlaylistOnSequence();
 
                 String str = p1.toString();
                 String strExpected = "";

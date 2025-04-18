@@ -7,6 +7,40 @@ import org.junit.Test;
  */
 public abstract class MusicPlaylistOnSequenceTest {
     /**
+     * Test no parameter constructor.
+     */
+    @Test
+    public void testConstructorNoParam() {
+        MusicPlaylist p1 = new MusicPlaylistOnSequence();
+        MusicPlaylist p2 = new MusicPlaylistOnSequence();
+
+        assertEquals(p2, p1);
+    }
+
+    /**
+     * Test String paramter constructor.
+     */
+    @Test
+    public void testConstructorStringParam() {
+        MusicPlaylist p1 = new MusicPlaylistOnSequence("20cm", "TXT");
+        MusicPlaylist p2 = new MusicPlaylistOnSequence("20cm", "TXT");
+
+        assertEquals(p2, p1);
+    }
+
+    /**
+     * Test String paramter constructor.
+     */
+    @Test
+    public void testConstructorSongParam() {
+        Song s1 = new Song("20cm", "TXT");
+
+        MusicPlaylist p1 = new MusicPlaylistOnSequence(s1);
+        MusicPlaylist p2 = new MusicPlaylistOnSequence(s1);
+
+        assertEquals(p2, p1);
+    }
+    /**
      * Test newInstance method.
      */
     @Test
