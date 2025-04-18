@@ -79,7 +79,7 @@ the following form: YYYY.0M.0D.
 
 - Changed design to include thorougly established interfaces for the kernel and secondary methods within MusicPlaylist, more specifically the return type and parameters.
 
-## 2025.02.20
+## [2025.02.20]
 
 ### Added
 
@@ -91,6 +91,20 @@ the following form: YYYY.0M.0D.
 - Completed an initial implementation for all kernel methods (isEmpty(), add(), remove(), clear(), hasSong()) and two secondary methods (merge() and getArtist()).
 - Changed MusicPlaylist component to be based off a sequence of map pairs rather than a map to allow for greater flexibility and easier access to indivual pairs (otherwise known as the songs).
 - Provided informal testing of methods for proof of their viability.
+
+## [2025.03.04]
+
+### Added
+
+- Designed kernel and enhanced interfaces for MusicPlaylist and MusicPlaylistKernel component
+
+### Updated
+
+- Changed design to include better and more logical layering between the kernel and secondary methods
+
+- Designed a MusicPlaylist component
+- Designed a ArtPorfo component
+- Designed a StudentID component
 
 ## 2025.04.13
 
